@@ -11,9 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class QuizService {
@@ -31,7 +29,7 @@ public class QuizService {
         quiz.setTitle(title);
         quiz.setQuestionIds(questions);
         quizDao.save(quiz);
-        return new ResponseEntity<>("success", HttpStatus.CREATED);
+        return new ResponseEntity<String>("success", HttpStatus.CREATED);
     }
 
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(int id) {
